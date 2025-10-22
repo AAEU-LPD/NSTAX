@@ -1,0 +1,18 @@
+# File Extensions to exclude
+*.pyc
+*.txt
+# *.bat
+*.zip
+*.html
+*.png
+*.csv
+*.log
+config/teststation_config.yaml
+# Folders to exclude
+current_logs
+results
+venv
+env
+.vscode
+docs/_build/
+docs/api/

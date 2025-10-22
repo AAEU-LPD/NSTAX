@@ -1,0 +1,55 @@
+# ################################################################################
+# # Contains a list of tests to be run
+# ################################################################################
+---
+testsuite:
+  -    
+    #########################################################################
+    ###                       TestSuite_HATI_TRUMI DRIVE TEST             ###
+    #########################################################################
+    name: TestSuite_HATI_TRUMI
+    tests:
+      - name: TRUMI_Status_Relocation_Start_Message_Detection
+        dut_index: 0
+        test_parameters:
+          moving_speed_rpm: 320  
+          moving_time_sec: 600
+          waiting_time_sec: 660  # 11mins
+
+      - name: TRUMI_Status_Single_On_the_Move_Detection
+        dut_index: 0
+        test_parameters:
+          moving_speed_rpm: 320  
+          moving_time_sec: 600  # Configure device capture location: Every 3 minutes
+          waiting_time_sec: 660
+        
+      - name: TRUMI_Status_Multiple_On_the_Move_Detection
+        dut_index: 0
+        test_parameters:
+          moving_speed_rpm: 320  
+          moving_time_sec: 600  # Configure device capture location: Every 3 minutes
+          waiting_time_sec: 660
+
+      - name: TRUMI_Relocation_Start_Message_Timing_Detection
+        dut_index: 0
+        test_parameters:
+          moving_speed_rpm: 320  
+          moving_time_sec: 600
+          waiting_time_sec: 660
+
+      - name: TRUMI_Status_Destination_Reached_Message_Detection
+        dut_index: 0
+        test_parameters:
+          moving_speed_rpm: 320  
+          moving_time_sec: 600
+          journey1_waiting_time_sec: 480  # 8mins
+          journey2_waiting_time_sec: 660  # 11mins
+
+      - name: TRUMI_Devices_Comparision_Detection 
+        dut_index: [0, 1]
+        test_parameters:
+          moving_speed_rpm: 320  
+          moving_time_sec: 600
+          waiting_time_sec: 660 
+
+

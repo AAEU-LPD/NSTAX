@@ -1,0 +1,24 @@
+################################################################################
+# Contains a list of tests to be run
+################################################################################
+---
+testsuite:
+    #########################################################################
+    ###                       TestSuite_N5_CellID                         ###
+    #########################################################################
+  -
+    name: TestSuite_Misc_Utils
+    tests:
+      - name: PlatformDeviceMessageLoggerCSV
+        dut_index: 1
+        test_parameters:
+          start_time_utc: "2024-08-14T12:40:00"
+          end_time_utc: "2024-08-18T14:20:00"
+          max_message_count: 500
+
+      - name: PlatformDeviceMessageLoggerCSV
+        dut_index: 2
+        test_parameters:
+          start_time_utc: "2024-08-14T12:40:00"
+          end_time_utc: "2024-08-18T14:20:00"
+          max_message_count: 500

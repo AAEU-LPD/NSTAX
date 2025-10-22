@@ -1,0 +1,243 @@
+################################################################################
+# Contains test station specific parameters
+################################################################################
+---
+
+device:
+  - type: SigfoxDevice
+    name: L5
+    parameters:
+      logger_params:
+        data_logging_en: False
+        log_timestamps: True
+        log_port: COM15
+  # DEV 1
+  - type: PlatformDevice
+    name: 131CZW
+    parameters:
+      device_id: 492058
+  - type: PlatformDevice
+    name: 1FH6GX
+    parameters:
+      device_id: 492007
+  - type: PlatformDevice
+    name: 1HMLJQ
+    parameters:
+      device_id: 492006
+  - type: PlatformDevice
+    name: 26AVWT
+    parameters:
+      device_id: 492054
+  - type: PlatformDevice
+    name: 272VZZ
+    parameters:
+      device_id: 491999
+  - type: PlatformDevice
+    name: 27AE1F
+    parameters:
+      device_id: 492062
+  - type: PlatformDevice
+    name: 2PMZLG
+    parameters:
+      device_id: 492012
+  - type: PlatformDevice
+    name: 3CM6RG
+    parameters:
+      device_id: 492065
+  - type: PlatformDevice
+    name: 3QU9GQ
+    parameters:
+      device_id: 492036
+  - type: PlatformDevice
+    name: 4H16LZ
+    parameters:
+      device_id: 492064
+  # DEV 11
+  - type: PlatformDevice
+    name: 4WDJLL
+    parameters:
+      device_id: 491996
+  - type: PlatformDevice
+    name: 4X6QM1
+    parameters:
+      device_id: 492047
+  - type: PlatformDevice
+    name: 4XCPYU
+    parameters:
+      device_id: 492016
+  - type: PlatformDevice
+    name: 72Z472
+    parameters:
+      device_id: 491998
+  - type: PlatformDevice
+    name: 74R61H
+    parameters:
+      device_id: 492020
+  - type: PlatformDevice
+    name: 7JENHC
+    parameters:
+      device_id: 492019
+  - type: PlatformDevice
+    name: 9211F9
+    parameters:
+      device_id: 492031
+  - type: PlatformDevice
+    name: 9MPGGK
+    parameters:
+      device_id: 491993
+  - type: PlatformDevice
+    name: 9TTZ14
+    parameters:
+      device_id: 492051
+  - type: PlatformDevice
+    name: 9WEW6J
+    parameters:
+      device_id: 492041
+  # DEV 21
+  - type: PlatformDevice
+    name: AYWU3Y
+    parameters:
+      device_id: 492070
+  - type: PlatformDevice
+    name: AZJAY1
+    parameters:
+      device_id: 492022
+  - type: PlatformDevice
+    name: C9ZZNR
+    parameters:
+      device_id: 491997
+  - type: PlatformDevice
+    name: CRZX4V
+    parameters:
+      device_id: 492043
+  - type: PlatformDevice
+    name: CUQLGK
+    parameters:
+      device_id: 492025
+  - type: PlatformDevice
+    name: DE2YUF
+    parameters:
+      device_id: 492003
+  - type: PlatformDevice
+    name: DTFGYH
+    parameters:
+      device_id: 492002
+  - type: PlatformDevice
+    name: DWUE9J
+    parameters:
+      device_id: 492005
+  - type: PlatformDevice
+    name: EEAT2Y
+    parameters:
+      device_id: 492011
+  - type: PlatformDevice
+    name: EP9N6K
+    parameters:
+      device_id: 492053
+  # DEV 31
+  - type: PlatformDevice
+    name: F1EP4J
+    parameters:
+      device_id: 492039
+  - type: PlatformDevice
+    name: F2VTUY
+    parameters:
+      device_id: 492004
+  - type: PlatformDevice
+    name: FN9RYE
+    parameters:
+      device_id: 492017
+  - type: PlatformDevice
+    name: G4Z213
+    parameters:
+      device_id: 492021
+  - type: PlatformDevice
+    name: G67C27
+    parameters:
+      device_id: 492052
+  - type: PlatformDevice
+    name: G7UFFG
+    parameters:
+      device_id: 492063
+  - type: PlatformDevice
+    name: GNU3NW
+    parameters:
+      device_id: 492000
+  - type: PlatformDevice
+    name: GYDNKF
+    parameters:
+      device_id: 492032
+  - type: PlatformDevice
+    name: H2CRMX
+    parameters:
+      device_id: 492034
+  - type: PlatformDevice
+    name: HCZWZU
+    parameters:
+      device_id: 492049
+  # DEV 41
+  - type: PlatformDevice
+    name: HFX2FD
+    parameters:
+      device_id: 492018
+  - type: PlatformDevice
+    name: HLNX9E
+    parameters:
+      device_id: 492056
+  - type: PlatformDevice
+    name: HTJNDC
+    parameters:
+      device_id: 492055
+  - type: PlatformDevice
+    name: JHQN2A
+    parameters:
+      device_id: 492023
+  - type: PlatformDevice
+    name: JLWPPU
+    parameters:
+      device_id: 492071
+  - type: PlatformDevice
+    name: K1MX9C
+    parameters:
+      device_id: 492010
+  - type: PlatformDevice
+    name: KTQDC4
+    parameters:
+      device_id: 492048
+  - type: PlatformDevice
+    name: L3U6T7
+    parameters:
+      device_id: 492013
+  - type: PlatformDevice
+    name: M27MDZ
+    parameters:
+      device_id: 492050
+  - type: PlatformDevice
+    name: MWAM9N
+    parameters:
+      device_id: 492024
+
+equipment:
+  - type: IKAKS130
+    name: IKAKS130
+    parameters:
+      port: COM21
+
+qtest:
+  enabled: false
+  url: "https://alpsalpine.qtestnet.com"
+  username: "YOUR_USER_ID"
+  password: "YOUR_PASSWORD"
+  project_id: 107344
+  testcycle_id: 4367028
+
+sigfox:
+  login_id: 60d4865a988a3720a3948e1d
+  password: 51ef98b2e4c8b18875b5baf2c5f6bde8
+
+stickntrack:
+  url: "https://stickntrack.sensolus.com"
+  auth_path: "/rest/authentication/login"
+  username: "Debasish Chanda DEV"
+  password: "YOUR_PASSWORD"
+

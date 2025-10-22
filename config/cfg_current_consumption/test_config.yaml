@@ -1,0 +1,42 @@
+# ################################################################################
+# # Contains a list of tests to be run
+# ################################################################################
+---
+testsuite:
+#  -
+#    name: dummy_testscript      # Testsuite name
+#    build_version: "x.xx.x"     # Version number to run (Optional)
+#    qmetry_tag: "{FOLDER_NAME}" # Testsuite name in Qmetry (Required for Qmetry Integration)
+#    tests:
+#      - name: DummyTestScript   # Script name (TestScript type)
+#        dut_index: 0            # DUT index as placed in teststation_config.yaml
+#      - name: DummyTestScript
+#        dut_index: 1
+#        test_parameters:
+#          param1: "example_parameter_1"
+#          param2: 999
+
+  -    
+    #########################################################################
+    ###                       CurrentConsumption_Suite                    ###
+    #########################################################################
+    
+    name: TestSuite_L5_CurrentConsumption
+    tests:
+       - name: CurrentConsumption_Regression
+         dut_index: 0
+         test_parameters:
+            # current_states: ["LED_5", "LED_10"]
+            # current_states: ["LED_5"]
+            # current_states: ["LED_10"]
+            # current_states: ["UL_ACT"]
+            # current_states: ["UL_MAC"]
+            # current_states: ["WIFI_SCAN"]
+            # current_states: ["UL_DLRQ"]
+            current_states: ["LED_5","LED_10","UL_ACT","UL_DLRQ","UL_MAC","WIFI_SCAN"]
+            # current_states: ["UL_ACT","UL_DLRQ","UL_MAC"]
+            # current_states: ["UL_ACT","UL_MAC"]
+            measure_period: 150
+            current_file: "output_ppk2.csv" 
+            file_index: 0 
+

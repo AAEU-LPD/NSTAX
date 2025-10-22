@@ -1,0 +1,104 @@
+################################################################################
+# Contains test station specific parameters
+################################################################################
+# This file is used to configure the test station and its devices.
+# The configuration is in YAML format and should be structured as follows.
+  
+#####################################
+### Device configuration template ###
+#####################################
+# - type: can be [PlatformDevice or SigfoxDevice or DummyDevice]
+#   name: DEV_NAME (Can be any label, preferable the serial)
+#   parameters:
+#     device_id: XXXXX (numerical from URL)
+#     logger_params:
+#       data_logging_en: [true or false]
+#       log_timestamps: [True or False (bool)]
+#       log_port: COM PORT (e.g. COM3, COM4, etc.)
+#
+# Example:
+# - type: PlatformDevice 
+#   name: HATI_UU9UNE
+#   parameters:
+#     device_id: 545012
+#     logger_params:
+#           data_logging_en: false
+#           log_timestamps: True
+#           log_port: COM6
+# 
+# Note: Devices can then be referenced by their index in the test cases. [e.g.dut_index: 0 or dut_index: [0,1,..] etc.]
+---
+
+device:
+  - type: PlatformDevice
+    name: HATI_4CULK2
+    parameters:
+      device_id: 560253
+
+########################################
+### Equipment configuration template ###
+########################################
+# - type: can be any from equipment folder (e.g. AMARISOFT, IKAKS130, etc.)
+#   name: EQP_NAME (Can be equipment label)
+#   parameters:
+#     host_ip: ip address (IP address of the equipment)
+#     or
+#     port: COM PORT (COM port for serial devices) 
+#     or
+#     other parameters depending on the equipment type (e.g. waveform_generator, etc.)
+#
+# Example:
+# - type: AMARISOFT
+#   name: AMARISOFT
+#   parameters:
+#     host_ip: 10.51.16.6
+#     or
+#     port: COM4
+#     or
+#     waveform_generator: EDU33211A
+#
+# Equipment list can remain populated without any changes, as it is used for the test station.
+
+equipment:
+  - type: AMARISOFT
+    name: AMARISOFT
+    parameters:
+      host_ip: 10.51.16.6
+
+#########################
+### QTest integration ###
+#########################
+qtest:
+  enabled: false # Set to true if you want to use QTest result publishing
+  url: "https://alpsalpine.qtestnet.com"
+  username: "YOUR_USER_ID"
+  password: "YOUR_PASSWORD"
+  project_id: 107344 #from qtest project settings
+  testcycle_id: 4367028 #from qtest test cycle settings
+
+##########################
+### QMetry integration ###
+##########################
+qmetry:
+  enabled: false          # Set to true if you want to use QMetry result publishing
+  url: "https://testmanagementeu.qmetry.com"
+  automation_api_key: ""  # Your QMetry Automation API Key
+  openapi_key: ""         # Your QMetry OpenAPI Key
+  project_name: ""        # Your QMetry Project Name. Eg: Hati_System
+  exec_folder: ""         # Your QMetry Execution Folder Name. Eg: HATI_TEST
+
+###########################
+### Sigfox Platform API ###
+###########################
+sigfox:
+  login_id: 60d4865a988a3720a3948e1d          # Sigfox login ID
+  password: 51ef98b2e4c8b18875b5baf2c5f6bde8  # Sigfox password
+
+#############################
+### Sensolus Platform API ###
+#############################
+stickntrack:
+  url: "https://stickntrack.sensolus.com" # Sensolus URL
+  auth_path: "/rest/authentication/login" # Sensolus authentication path
+  username: "username"                    # Sensolus username
+  password: "password"                    # Sensolus password

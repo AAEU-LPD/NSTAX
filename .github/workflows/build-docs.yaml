@@ -1,0 +1,53 @@
+name: Build Sphinx Documentation
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+  workflow_dispatch:   # allows manual trigger
+    inputs:
+      branch:
+        description: 'Branch to build docs from'
+        required: true
+        default: 'main'
+
+jobs:
+  build-docs:
+    runs-on: windows-latest
+
+    steps:
+      # 1. Checkout source
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # 3. Install Sphinx dependencies
+      - name: Install dependencies
+        shell: cmd
+        run: |
+          python -m pip install --upgrade pip
+          pip install sphinx sphinx-autodoc-typehints sphinx-rtd-theme
+
+      # 3a. Make NSTA importable
+      - name: Add NSTA to PYTHONPATH
+        shell: cmd
+        run: set PYTHONPATH=%CD%\..;%PYTHONPATH%
+
+      # 4. Build documentation
+      - name: Build documentation
+        shell: cmd
+        run: call build_doc.bat
+
+      # 5. Upload built HTML as artifact
+      - name: Upload documentation artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sphinx-html-docs
+          path: docs\_build\html

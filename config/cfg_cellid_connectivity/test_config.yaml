@@ -1,0 +1,183 @@
+################################################################################
+# Contains a list of tests to be run
+################################################################################
+---
+testsuite:
+    ########################################################################
+    ##                       TestSuite_N5_CellID                         ###
+    ########################################################################
+  -
+    name: TestSuite_N5_CellID
+    tests:
+      - name: N5_CellID_Cell_Attach
+        dut_index: 0
+        test_parameters:
+          message_wait_interval_min: 10
+          cell_type: "nbiot"              # type of cell to be used for the test (nbiot/catm1)
+      - name: N5_CellID_Cell_Attach_TRUMI
+        dut_index: 0
+        test_parameters:
+          message_wait_interval_min: 10
+          shaker_duration_min: 10
+          shaker_speed_rpm: 400
+          cell_type: "nbiot"              # type of cell to be used for the test (nbiot/catm1)
+      - name: N5_CellID_Low_Service
+        dut_index: 1
+        test_parameters:
+          message_wait_interval_min: 5
+          gain_range_dB: [0,-60]
+          gain_step_dB: 10
+          cell_type: "nbiot"              # type of cell to be used for the test (nbiot/catm1)
+      - name: N5_CellID_Reconnection_Cell_Switch
+        dut_index: 1
+        test_parameters:
+          message_wait_interval_min: 5
+          cell_types: ["nbiot","catm1"]   # type of cell to be used for the test (nbiot/catm1)
+      - name: N5_CellID_Cell_Attach_Custom
+        dut_index: 1
+        test_parameters:
+          message_wait_interval_min: 5
+          cell_ids: ['25646439', '25636297', '26059978', '26059977'] # Alps Office Cell IDs
+          operator: "O2" # Sim card used
+
+    #########################################################################
+    ###                       TestSuite_HATI_CellID                       ###
+    #########################################################################
+  -  
+    name: TestSuite_HATI_CellID
+    qmetry_tag: Device_Connectivity
+    build_version: "3.34.1"
+    tests:
+      - name: HATI_CellID_Cell_Attach
+        dut_index: 0
+        test_parameters:
+          message_wait_interval_min: 10   # time (in mins) to wait for the message to be received on the backend
+          isolated_cell_index: 2          # index of the cell that is isolated for the test (0,1,2) 
+          cell_type: "nbiot"              # type of cell to be used for the test (nbiot/catm1)
+      - name: HATI_CellID_Cell_Attach_TRUMI
+        dut_index: 2
+        test_parameters:
+          message_wait_interval_min: 10   # time (in mins) to wait for the message to be received on the backend
+          isolated_cell_index: 0          # index of the cell that is isolated for the test (0,1,2) 
+          shaker_duration_min: 10         # duration (in mins) to run the shaker
+          shaker_speed_rpm: 400           # speed (in rpm) to run the shaker  
+          cell_type: "nbiot"              # type of cell to be used for the test (nbiot/catm1)
+      - name: HATI_CellID_Low_Service
+        dut_index: 0
+        test_parameters:
+          message_wait_interval_min: 5   # time (in mins) to wait for the message to be received on the backend
+          isolated_cell_index: 2          # index of the cell that is isolated for the test(0,1,2) 
+          gain_range_dB: [0,-60]          # range of gain (in dBm) to test the cell
+          gain_step_dB: 10                # step of gain (in dBm) to cycle across the mentioned range
+          cell_type: "nbiot"              # type of cell to be used for the test (nbiot/catm1)
+      - name: HATI_CellID_Reconnection_Cell_Switch
+        dut_index: 2
+        test_parameters:
+          message_wait_interval_min: 10   # time (in mins) to wait for the message to be received on the backend
+          isolated_cell_index: [0,1]      # indices of the cell that is isolated for the test (0,1,2) 
+          cell_types: ["nbiot","catm1"]              # type of cell to be used for the test (nbiot/catm1)
+      - name: HATI_CellID_Cell_Attach_Custom
+        dut_index: 1
+        test_parameters:
+          message_wait_interval_min: 10                               # time (in mins) to wait for the message to be received on the backend
+          cell_ids: ['25646439', '25636297', '26059978', '26059977']  # Alps Office Cell IDs
+          operator: "O2"                                              # Sim card used
+      - name: HATI_CellID_Cell_Attach_Custom
+        dut_index: 0
+        test_parameters:
+          message_wait_interval_min: 10                  # time (in mins) to wait for the message to be received on the backend
+          cell_ids: ['27447554', '27447557', '27447560'] # Alps Office Cell IDs
+          operator: "TEST"                               # Sim card used
+
+    #########################################################################
+    ###                    TestSuite_HATI_Connectivity                    ###
+    ########################################################################
+    #   Example parameters for tests:
+    #   - name: HATI_Connectivity_Activation_ECL_0
+    #     dut_index: 0
+    #     test_parameters:
+    #       downlink_wait_time_min: 2 # Expected wait time it would take for the DL to be recevied 
+    #       ciot_timeout_min: 1440 # 24 hours
+    #       network_outage_min: 60 # 1 hour
+    #       network_mode: 'nbiot'  # 'nbiot' or 'catm1' or 'both'
+    #       station_label: 'B'   # 'A' or 'B' magnet on the NSTA25MV
+    #       band: 20  # 3, 8, 20, 28, 5, 18, 1
+  -
+    name: TestSuite_HATI_Connectivity
+    qmetry_tag: Device_Connectivity
+    build_version: "3.35.0"
+    tests:
+      - name: HATI_Connectivity_Activation_ECL_0
+        dut_index: 0
+        test_parameters:
+          pre_config: True
+          downlink_wait_time_min: 2 # In this case, the time it takes for activation manage to be sent
+          station_label: 'B'   # 'A' or 'B' magnet on the NSTA25MV
+          network_mode: 'both' # 'nbiot' or 'catm1' or 'both'
+          band: 20             # 3, 8, 20, 28, 5, 18, 1
+      - name: HATI_Connectivity_Activation_ECL_1
+        dut_index: 0
+        test_parameters:
+          pre_config: True
+          downlink_wait_time_min: 2
+          station_label: 'B'   # 'A' or 'B' magnet on the NSTA25MV
+      - name: HATI_Connectivity_Activation_ECL_2
+        dut_index: 0
+        test_parameters:
+          pre_config: True
+          downlink_wait_time_min: 2
+          station_label: 'B'   # 'A' or 'B' magnet on the NSTA25MV
+      - name: HATI_Connectivity_Activation_No_Network
+        dut_index: 0
+        test_parameters:
+          pre_config: True
+          downlink_wait_time_min: 60
+          ciot_timeout_min: 30 # 24 hours
+          network_outage_min: 60 # 1 hour
+          station_label: 'B'   # 'A' or 'B' magnet on the NSTA25MV
+      - name: HATI_Connectivity_Activation_No_Internet
+        dut_index: 0
+        test_parameters:
+          pre_config: True
+          downlink_wait_time_min: 60 
+          ciot_timeout_min: 30 # 24 hours
+          network_outage_min: 60 # 1 hour
+          station_label: 'B'   # 'A' or 'B' magnet on the NSTA25MV
+      - name: HATI_Connectivity_Location_Full_Service
+        dut_index: 1
+        test_parameters:
+          downlink_wait_time_min: 5 # In this case, the stop timeout of the device
+          station_label: 'B'   # 'A' or 'B' magnet on the NSTA25MV
+      - name: HATI_Connectivity_Location_No_Network
+        dut_index: 1
+        test_parameters:
+          downlink_wait_time_min: 60
+          ciot_timeout_min: 30 # 24 hours
+          network_outage_min: 60 # 1 hour
+          station_label: 'B'   # 'A' or 'B' magnet on the NSTA25MV
+      - name: HATI_Connectivity_Location_No_Internet
+        dut_index: 1
+        test_parameters:
+          downlink_wait_time_min: 60
+          ciot_timeout_min: 30 # 24 hours
+          network_outage_min: 60 # 1 hour
+          station_label: 'B'   # 'A' or 'B' magnet on the NSTA25MV
+      - name: HATI_Connectivity_Periodic_Full_Service
+        dut_index: 0
+        test_parameters:
+          downlink_wait_time_min: 60 # In this case, the keepalive downlink interval of the device
+          station_label: 'B'   # 'A' or 'B' magnet on the NSTA25MV
+      - name: HATI_Connectivity_Periodic_No_Network
+        dut_index: 0
+        test_parameters:
+          downlink_wait_time_min: 60
+          ciot_timeout_min: 30 # 24 hours
+          network_outage_min: 60 # 1 hour
+          station_label: 'B'   # 'A' or 'B' magnet on the NSTA25MV
+      - name: HATI_Connectivity_Periodic_No_Internet
+        dut_index: 0
+        test_parameters:
+          downlink_wait_time_min: 60
+          ciot_timeout_min: 30 # 24 hours
+          network_outage_min: 60 # 1 hour
+          station_label: 'B'   # 'A' or 'B' magnet on the NSTA25MV

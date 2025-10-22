@@ -1,0 +1,46 @@
+################################################################################
+# Contains a list of tests to be run
+################################################################################
+---
+testsuite:
+    #########################################################################
+    ###                             FOTA_Suite                            ###
+    #########################################################################
+  -  
+    name: TestSuite_N5_FOTA
+    tests:
+      - name: FOTA_StandardOperation
+        dut_index: 0
+        test_parameters:
+            FW_candidate: "FWUP_PKG_LYKN5_ALPS_Prod_433e4314_v29.0.0_N5_Alps_Generic_activated.bin"
+
+      - name: FOTA_Loop
+        dut_index: 0
+        test_parameters:
+            FW_candidate: "FWUP_PKG_LYKN5_ALPS_Prod_433e4314_v29.0.0_N5_Alps_Generic_activated.bin"
+            number_of_loops: 1
+            duration_of_loop_min : 60
+
+      - name: FOTA_provision_time
+        dut_index: 0
+        test_parameters:
+            FW_candidate: "FWUP_PKG_LYKN5_ALPS_Prod_433e4314_v29.0.0_N5_Alps_Generic_activated.bin"
+            duration_of_loop_min : 1
+
+      - name: FOTA_previous_FW
+        dut_index: 0
+        test_parameters:
+            FW_candidate: "FWUP_PKG_LYKN5_ALPS_Prod_f54197e1_v27.0.0_N5_Alps_Generic_activated.bin"
+            duration_of_loop_min : 60
+
+      - name: FOTA_corrupted_FW
+        dut_index: 0
+        test_parameters:
+            FW_candidate: "FWUP_PKG_LYKN5_ALPS_Prod_433e4314_v29.0.0_CORRUPTED_V4_N5_Alps_Generic_activated.bin"
+            duration_of_loop_min : 60
+
+      - name: FOTA_config_retention
+        dut_index: 0
+        test_parameters:
+            FW_candidate: "FWUP_PKG_LYKN5_ALPS_Prod_433e4314_v29.0.0_N5_Alps_Generic_activated.bin"
+            duration_of_loop_min : 60

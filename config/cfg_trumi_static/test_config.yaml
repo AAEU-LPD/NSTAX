@@ -1,0 +1,41 @@
+################################################################################
+# Contains a list of tests to be run
+################################################################################
+---
+testsuite:   
+    #########################################################################
+    ###                       TestSuite_N5_TRUMI                          ###
+    #########################################################################
+    # Description of parameters
+    #   Frequency:
+    #     The following frequencies generate accel readings that cross the thresholds (in mg) set for TRUMI
+    #       2Hz   -> No movement (TRUMI should not trigger)
+    #       5Hz   -> Noise Threshold (TRUMI may trigger but should filter out as noise)
+    #       10Hz  -> Motion (TRUMI should trigger once the vel/dist thresholds are crossed)
+    #       50Hz  -> Truck Vibration (TRUMI will likely trigger and at a shorter time than usual)
+    #       50Hz+ -> Non-visible frequencies/minor vibrations (TRUMI will likely filter these out as noise)
+    #   Duration:
+    #     The duration of 180s is ideal to trigger TRUMI in most scenarios.
+    #     The duration may have to be adjusted (increased) for smaller frequencies for TRUMI to trigger.
+    #     This is so that the Velocity and Distance thresholds can be crossed.
+    #   Voltage:
+    #     Set to 0.1V by default, if more amplitude is required then it can be increased upto 0.3V
+    # Further information can be found on ticket STA-128
+  -  
+    name: TestSuite_N5_TRUMI
+    tests:
+      - name: TRUMI_State_Transition_TRUMI
+        dut_index: [0,1]
+      - name: TRUMI_State_Transition_RELOC
+        dut_index: [0,1]
+      - name: TRUMI_State_Transition_Keep_TRUMI_Variables
+        dut_index: [0,1]
+      - name: TRUMI_State_Transition_Clear_TRUMI_Variables
+        dut_index: [0,1]
+      - name: TRUMI_Benchmark
+        dut_index: [0,1]
+        test_parameters:
+          frequency: [2, 5, 10, 50, 100, 1000] # 5, 10, 50, 100, 1000 [def:5,10,50Hz]
+          duration: [30, 120, 300, 600, 1800] # 30, 120, 180, 240 [def: 180s]
+          voltage: [0.1, 0.2] # 0.1, 0.2, 0.3 [def:0.1V]
+        
