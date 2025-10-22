@@ -15,6 +15,8 @@ release = '0.1'
 
 sys.path.insert(0, os.path.abspath('..'))   # Add project root to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, r'D:\a\NSTAX\NSTAX')
+sys.path.insert(0, r'D:\a\NSTAX')
 
 # -- General configuration ---------------------------------------------------
 extensions = [
