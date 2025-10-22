@@ -30,7 +30,15 @@ jobs:
       # 3. Upgrade pip
       - name: Upgrade pip
         shell: cmd
+<<<<<<< HEAD
         run: python -m pip install --upgrade pip
+=======
+        run: |
+          cd %GITHUB_WORKSPACE%
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install sphinx sphinx-autodoc-typehints sphinx-rtd-theme
+>>>>>>> a6c770412c00fb04915dc1a877aaed99de530f67
 
       # 4. Install NSTAX package in editable mode
       - name: Install NSTAX
