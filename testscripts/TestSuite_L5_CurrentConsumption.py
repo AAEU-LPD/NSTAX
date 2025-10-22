@@ -5,8 +5,8 @@ import pandas as pd
 import numpy as np
 import os
 
-from NSTA.testscripts.test_script import TestScript
-from NSTA.testscripts.lykaner5_current_detect import ActivationAnalysis
+from NSTAX.testscripts.test_script import TestScript
+from NSTAX.testscripts.lykaner5_current_detect import ActivationAnalysis
 
 class CurrentBaseScript(TestScript):
     """Base test script for Current Consumption Suite.

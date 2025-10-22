@@ -1,8 +1,8 @@
 from time import sleep
 import serial.tools.list_ports
 
-from NSTA.equipment.equipment import Equipment
-from NSTA.interface.rs232_interface import RS232Interface
+from NSTAX.equipment.equipment import Equipment
+from NSTAX.interface.rs232_interface import RS232Interface
 
 SPEED_LEVEL_HIGH = 4   # High speed level for the shaker
 SPEED_LEVEL_MEDIUM = 3    # Medium speed level for the shaker

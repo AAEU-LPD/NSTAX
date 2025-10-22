@@ -15,7 +15,7 @@ import time
 import copy
 from datetime import datetime
 import requests
-from NSTA.testscripts.test_script import ResultClassifier
+from NSTAX.testscripts.test_script import ResultClassifier
 
 
 class QTestIntegration:

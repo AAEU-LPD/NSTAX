@@ -9,8 +9,8 @@ Default interface is the SensolusWebInterface.
 
 import datetime
 
-from NSTA.devices.device import Device
-from NSTA.interface.sensolus_web_interface import SensolusWebInterface
+from NSTAX.devices.device import Device
+from NSTAX.interface.sensolus_web_interface import SensolusWebInterface
 
 
 class PlatformDevice(Device):

@@ -14,7 +14,7 @@ Linux (Pi): rsvisa_5.12.9_raspios_buster_arm64.deb
 import os
 from time import sleep
 import pyvisa  # Virtual Instrument Software Architecture
-from NSTA.interface.interface import Interface
+from NSTAX.interface.interface import Interface
 
 
 class PyvisaInterface(Interface):

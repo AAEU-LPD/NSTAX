@@ -13,9 +13,9 @@ Makes use of the following features of the NSTA framework:
 """
 
 
-from NSTA.interface.sensolus_web_interface import SensolusWebInterface
-from NSTA.devices.platform_device import PlatformDevice
-from NSTA.reports.report_engine import ReportEngine
+from NSTAX.interface.sensolus_web_interface import SensolusWebInterface
+from NSTAX.devices.platform_device import PlatformDevice
+from NSTAX.reports.report_engine import ReportEngine
 
 
 class NBIOTECLStatsOverContract:

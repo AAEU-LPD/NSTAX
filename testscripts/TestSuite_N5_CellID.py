@@ -1,7 +1,7 @@
 """Test Suite for N5 Cell ID Geolocation Feature."""
 
-from NSTA.testscripts.test_script import TestScript
-from NSTA.testscripts.lykaner_platform_message_v2 import PlatformMessage
+from NSTAX.testscripts.test_script import TestScript
+from NSTAX.testscripts.lykaner_platform_message_v2 import PlatformMessage
 
 
 class N5_CellID_BasePerfStats(TestScript):

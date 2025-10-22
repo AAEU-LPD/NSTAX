@@ -1,8 +1,8 @@
 from time import sleep
 import serial.tools.list_ports
 
-from NSTA.equipment.equipment import Equipment
-from NSTA.interface.rs232_interface import RS232Interface
+from NSTAX.equipment.equipment import Equipment
+from NSTAX.interface.rs232_interface import RS232Interface
 
 MAGNET_A_TRIGGER_ON = 20  # Magnet trigger on command
 MAGNET_A_TRIGGER_OFF = 21  # Magnet trigger off command

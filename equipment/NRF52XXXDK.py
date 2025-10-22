@@ -6,8 +6,8 @@ Purpose is to use it's buit in BLE capabilities to perform relevant tests.
 from time import sleep
 import serial
 
-from NSTA.equipment.equipment import Equipment
-from NSTA.interface.rs232_interface import RS232Interface
+from NSTAX.equipment.equipment import Equipment
+from NSTAX.interface.rs232_interface import RS232Interface
 
 
 class dtm_constants:

@@ -13,7 +13,7 @@ Makes use of the following features of the NSTA framework:
 """
 
 
-from NSTA.interface.sensolus_web_interface import SensolusWebInterface
+from NSTAX.interface.sensolus_web_interface import SensolusWebInterface
 
 
 class DevSerToId:

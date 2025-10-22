@@ -6,8 +6,8 @@ equipment for specific singal generation related feature tests (Eg: control syst
 
 from time import sleep
 
-from NSTA.equipment.equipment import Equipment
-from NSTA.interface.pyvisa_interface import PyvisaInterface
+from NSTAX.equipment.equipment import Equipment
+from NSTAX.interface.pyvisa_interface import PyvisaInterface
 
 
 class SignalGenerator(Equipment):

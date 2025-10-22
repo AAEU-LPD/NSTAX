@@ -7,24 +7,24 @@ import datetime
 import importlib
 import yaml
 
-from NSTA.devices.dummy_device import *
-from NSTA.devices.sigfox_device import *
-from NSTA.devices.platform_device import *
-from NSTA.equipment.NSTA25M import *
-from NSTA.equipment.NSTA25MV import *
-from NSTA.equipment.NSTA25V import *
-from NSTA.equipment.IKAHS501 import *
-from NSTA.equipment.IKAKS130 import *
-from NSTA.equipment.AMARISOFT import *
-from NSTA.equipment.XARM import *
-from NSTA.equipment.SHKR2075E import *
-from NSTA.equipment.DT9837 import *
-from NSTA.testscripts import *
-from NSTA.testscripts.test_plan import TestSuite, TestInstance
-from NSTA.reports.result_suite import ResultSuite
-from NSTA.reports.report_engine import ReportEngine
-from NSTA.QT.QTestIntegration import QTestIntegration
-from NSTA.Qmetry.QmetryIntegration import QmetryIntegration
+from NSTAX.devices.dummy_device import *
+from NSTAX.devices.sigfox_device import *
+from NSTAX.devices.platform_device import *
+from NSTAX.equipment.NSTA25M import *
+from NSTAX.equipment.NSTA25MV import *
+from NSTAX.equipment.NSTA25V import *
+from NSTAX.equipment.IKAHS501 import *
+from NSTAX.equipment.IKAKS130 import *
+from NSTAX.equipment.AMARISOFT import *
+from NSTAX.equipment.XARM import *
+from NSTAX.equipment.SHKR2075E import *
+from NSTAX.equipment.DT9837 import *
+from NSTAX.testscripts import *
+from NSTAX.testscripts.test_plan import TestSuite, TestInstance
+from NSTAX.reports.result_suite import ResultSuite
+from NSTAX.reports.report_engine import ReportEngine
+from NSTAX.QT.QTestIntegration import QTestIntegration
+from NSTAX.Qmetry.QmetryIntegration import QmetryIntegration
 import NSTA
 
 

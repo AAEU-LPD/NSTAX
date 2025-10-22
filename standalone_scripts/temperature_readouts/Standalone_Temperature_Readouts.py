@@ -11,7 +11,7 @@ Makes use of the following features of the NSTA framework:
 
 
 import csv
-from NSTA.devices.platform_device import PlatformDevice
+from NSTAX.devices.platform_device import PlatformDevice
 
 
 def get_device_messages(device_id, start_time_utc, end_time_utc, max_n_messages):

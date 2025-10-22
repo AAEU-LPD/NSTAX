@@ -4,7 +4,7 @@
 import os
 import pandas as pd
 
-from NSTA.testscripts.test_script import TestScript
+from NSTAX.testscripts.test_script import TestScript
 
 
 class PlatformDeviceMessageLoggerCSV(TestScript):

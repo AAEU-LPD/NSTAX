@@ -8,7 +8,7 @@ from queue import Queue
 from ctypes import *
 import csv
 
-from NSTA.equipment.equipment import Equipment
+from NSTAX.equipment.equipment import Equipment
 
 # Config Params
 NUM_CHANNELS = 4  # Max 4 channels for DT9837

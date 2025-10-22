@@ -6,8 +6,8 @@ Purpose of this module is to control an IKA KS 130 Labshaker for arbitrary opera
 
 from time import sleep
 
-from NSTA.equipment.equipment import Equipment
-from NSTA.interface.rs232_interface import RS232Interface
+from NSTAX.equipment.equipment import Equipment
+from NSTAX.interface.rs232_interface import RS232Interface
 
 # Error Codes
 error_codes = {

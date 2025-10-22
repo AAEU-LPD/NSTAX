@@ -8,8 +8,8 @@ from itertools import chain
 import logging
 from typing import List, Optional
 
-from NSTA.equipment.NRF52XXXDK import NRF52XXXDK, dtm_constants
-from NSTA.reports.report_engine import ReportEngine
+from NSTAX.equipment.NRF52XXXDK import NRF52XXXDK, dtm_constants
+from NSTAX.reports.report_engine import ReportEngine
 
 PKT_INTERVAL_US = 526  # Packet interval in microseconds (typical for BLE DTM)
 

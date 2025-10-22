@@ -5,8 +5,8 @@ connected and accessable through a COM port
 """
 from time import sleep
 
-from NSTA.devices.device import Device
-from NSTA.interface.rs232_interface import RS232Interface
+from NSTAX.devices.device import Device
+from NSTAX.interface.rs232_interface import RS232Interface
 
 class SerialDevice(Device):
     """Generic platform connected device base class.

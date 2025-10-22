@@ -1,7 +1,7 @@
 """Test Suite for HATI Cell ID Geolocation Feature."""
 
-from NSTA.testscripts.test_script import TestScript
-from NSTA.testscripts.lykaner_platform_message_v2 import PlatformMessage
+from NSTAX.testscripts.test_script import TestScript
+from NSTAX.testscripts.lykaner_platform_message_v2 import PlatformMessage
 
 from time import sleep
 from datetime import datetime, timezone

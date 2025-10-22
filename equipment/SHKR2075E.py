@@ -8,8 +8,8 @@
 from time import sleep
 from threading import Thread
 
-from NSTA.equipment.equipment import Equipment
-from NSTA.equipment.EDU33211A import EDU33211A
+from NSTAX.equipment.equipment import Equipment
+from NSTAX.equipment.EDU33211A import EDU33211A
 
 
 class SHKR2075E(Equipment):

@@ -7,8 +7,8 @@ equipment for specific device orientation related feature tests.
 
 from time import sleep
 
-from NSTA.equipment.equipment import Equipment
-from NSTA.interface.rs232_interface import RS232Interface
+from NSTAX.equipment.equipment import Equipment
+from NSTAX.interface.rs232_interface import RS232Interface
 
 
 class XARM(Equipment):

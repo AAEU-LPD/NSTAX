@@ -1,8 +1,8 @@
 """ Dummy device module for framework check."""
 
 
-from NSTA.devices.device import Device
-from NSTA.interface.dummy_interface import DummyInterface
+from NSTAX.devices.device import Device
+from NSTAX.interface.dummy_interface import DummyInterface
 
 
 class DummyDevice(Device):

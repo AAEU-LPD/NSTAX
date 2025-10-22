@@ -1,9 +1,9 @@
 import time
 import yaml
 import datetime
-from NSTA.testscripts.test_script import TestScript
-from NSTA.interface.sensolus_web_interface import SensolusWebInterface
-from NSTA.devices.platform_device import PlatformDevice
+from NSTAX.testscripts.test_script import TestScript
+from NSTAX.interface.sensolus_web_interface import SensolusWebInterface
+from NSTAX.devices.platform_device import PlatformDevice
 
 
 class Hati_Utils(PlatformDevice):

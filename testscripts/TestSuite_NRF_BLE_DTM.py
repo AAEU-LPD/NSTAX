@@ -1,7 +1,7 @@
 """Test Suite for BLE DTM Tests for Nordic NRF devices."""
 
 
-from NSTA.testscripts.test_script import TestScript
+from NSTAX.testscripts.test_script import TestScript
 
 
 class NRF_BLE_DTM_SingleChannel_NRF_NRF(TestScript):

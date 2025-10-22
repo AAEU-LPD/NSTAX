@@ -14,7 +14,7 @@ import time
 import requests
 import datetime
 import xml.etree.ElementTree as ET
-from NSTA.testscripts.test_script import ResultClassifier
+from NSTAX.testscripts.test_script import ResultClassifier
 
 class QmetryIntegration:
     """Operator class for Qmetry integration to local test results.

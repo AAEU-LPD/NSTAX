@@ -8,10 +8,10 @@ interfaces such as: Sigfox backend, PPK2 interface.
 import datetime
 import pandas as pd
 
-from NSTA.devices.device import Device
-from NSTA.interface.sigfox_interface import SigfoxInterface
-from NSTA.equipment.PPKII import current_measure_ppk2
-from NSTA.testscripts.lykaner5_current_detect import CurrentDetector, CurrentGraphPlotter
+from NSTAX.devices.device import Device
+from NSTAX.interface.sigfox_interface import SigfoxInterface
+from NSTAX.equipment.PPKII import current_measure_ppk2
+from NSTAX.testscripts.lykaner5_current_detect import CurrentDetector, CurrentGraphPlotter
 
 
 class SigfoxDevice(Device):

@@ -15,7 +15,7 @@ import requests
 import yaml
 
 
-from NSTA.interface.interface import Interface
+from NSTAX.interface.interface import Interface
 
 
 class SensolusWebInterface(Interface):

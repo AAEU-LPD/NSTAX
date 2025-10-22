@@ -1,7 +1,7 @@
 """Dummy test script module for framework check."""
 
 
-from NSTA.testscripts.test_script import TestScript
+from NSTAX.testscripts.test_script import TestScript
 
 
 class DummyTestScript(TestScript):

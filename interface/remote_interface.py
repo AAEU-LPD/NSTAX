@@ -13,7 +13,7 @@ import paramiko
 from time import sleep
 from websocket import create_connection
 
-from NSTA.interface.interface import Interface
+from NSTAX.interface.interface import Interface
 
 class RemoteInterface(Interface):
     """Remote session of linux equipment.

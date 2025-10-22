@@ -9,8 +9,8 @@ import json
 from time import sleep
 from datetime import datetime, timedelta
 
-from NSTA.equipment.equipment import Equipment
-from NSTA.interface.remote_interface import RemoteInterface
+from NSTAX.equipment.equipment import Equipment
+from NSTAX.interface.remote_interface import RemoteInterface
 
 MAX_RX_GAIN = 60
 MAX_TX_POWER = 16

@@ -1,9 +1,9 @@
 import time
 import serial
-from NSTA.equipment.AMARISOFT import AMARISOFT
-from NSTA.equipment.NSTA25V import NSTA25V
-from NSTA.equipment.NSTA25M import NSTA25M
-from NSTA.interface.pyvisa_interface import PyvisaInterface
+from NSTAX.equipment.AMARISOFT import AMARISOFT
+from NSTAX.equipment.NSTA25V import NSTA25V
+from NSTAX.equipment.NSTA25M import NSTA25M
+from NSTAX.interface.pyvisa_interface import PyvisaInterface
 
 class hati_gps_test():
     def __init__(self, station, signal_generator_serial, amarisoft_ip):

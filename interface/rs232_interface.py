@@ -16,7 +16,7 @@ import time
 from datetime import datetime
 import logging
 
-from NSTA.interface.interface import Interface
+from NSTAX.interface.interface import Interface
 
 
 class RS232Interface(Interface):

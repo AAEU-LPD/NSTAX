@@ -1,7 +1,7 @@
 """Test Suite for HATI TRUMI Analysis"""
 
 
-from NSTA.testscripts.test_script import TestScript
+from NSTAX.testscripts.test_script import TestScript
 import time
 from pprint import pprint
 import datetime

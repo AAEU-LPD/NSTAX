@@ -1,6 +1,6 @@
 """Test Suite for HATI Cell ID Geolocation Feature."""
 
-from NSTA.testscripts.test_script import TestScript
+from NSTAX.testscripts.test_script import TestScript
 
 from time import sleep
 from datetime import datetime, timezone, timedelta

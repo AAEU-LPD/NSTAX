@@ -7,7 +7,7 @@ needed reporting modules.
 import copy
 import json
 
-from NSTA.testscripts.test_script import ResultClassifier
+from NSTAX.testscripts.test_script import ResultClassifier
 
 
 class ResultSuite:

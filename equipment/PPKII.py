@@ -19,8 +19,8 @@ import threading
 import pandas as pd
 import numpy as np
 
-from NSTA.equipment.equipment import Equipment
-from NSTA.interface.rs232_interface import RS232Interface
+from NSTAX.equipment.equipment import Equipment
+from NSTAX.interface.rs232_interface import RS232Interface
 
 class PPK2_Command():
     """Serial command opcodes"""

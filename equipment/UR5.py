@@ -8,7 +8,7 @@ from time import sleep
 from math import pi
 import socket
 
-from NSTA.equipment.equipment import Equipment
+from NSTAX.equipment.equipment import Equipment
 
 
 class UR5(Equipment):

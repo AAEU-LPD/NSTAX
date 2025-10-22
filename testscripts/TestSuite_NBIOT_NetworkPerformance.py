@@ -1,7 +1,7 @@
 """Test Suite for Platform NB-IoT Netwrok Performance stats."""
 
 
-from NSTA.testscripts.test_script import TestScript
+from NSTAX.testscripts.test_script import TestScript
 
 
 class NBIOT_NBDiag_AllECL(TestScript):

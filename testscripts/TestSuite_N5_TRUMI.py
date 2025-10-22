@@ -5,7 +5,7 @@ import time
 import random
 import datetime
 
-from NSTA.testscripts.test_script import TestScript
+from NSTAX.testscripts.test_script import TestScript
 from standalone_scripts.devicelogs_serialparser.n5_device_logs import SerialLogger, ConvertLogs
 
 

@@ -3,7 +3,7 @@
 
 from time import sleep
 
-from NSTA.interface.interface import Interface
+from NSTAX.interface.interface import Interface
 
 
 class DummyInterface(Interface):

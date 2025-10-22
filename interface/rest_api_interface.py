@@ -11,7 +11,7 @@ from urllib.parse import urljoin, urlparse
 import requests
 
 
-from NSTA.interface.interface import Interface
+from NSTAX.interface.interface import Interface
 
 
 class RESTAPIInterface(Interface):
