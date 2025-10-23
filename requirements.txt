@@ -1,4 +1,4 @@
-systemd-python==235
+pexpect==4.9.0
 appdirs==1.4.4
 argcomplete==3.1.4
 attrs==23.2.0
