@@ -15,10 +15,10 @@ on:
 
 jobs:
   build-docs:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout source
+      # 1. Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -28,26 +28,25 @@ jobs:
         with:
           python-version: '3.12'
 
-      # 3. Install dependencies
-      - name: Install Python dependencies
-        shell: cmd
+      # 3. Install dependencies from requirements.txt
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r D:\a\NSTAX\requirements.txt
+          pip install -r requirements.txt
 
-      # 3a. Add NSTAX root to PYTHONPATH so Sphinx can import modules
-      - name: Add NSTAX to PYTHONPATH
-        shell: cmd
-        run: set PYTHONPATH=%CD%;%PYTHONPATH%
+      # 4. Make sure the current directory is in PYTHONPATH (like on your test PCs)
+      - name: Add repo root to PYTHONPATH
+        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
 
-      # 4. Build documentation
-      - name: Build Sphinx documentation
-        shell: cmd
-        run: call build_doc.bat
+      # 5. Build documentation
+      - name: Build documentation
+        run: |
+          chmod +x ./build_doc.sh
+          ./build_doc.sh
 
-      # 5. Upload built HTML as artifact
+      # 6. Upload built HTML as artifact
       - name: Upload documentation artifact
         uses: actions/upload-artifact@v4
         with:
           name: sphinx-html-docs
-          path: docs\_build\html
+          path: docs/_build/html
