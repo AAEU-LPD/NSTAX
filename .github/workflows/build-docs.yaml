@@ -5,8 +5,7 @@ on:
     branches:
       - main
       - master
-
-  workflow_dispatch:   # allows manual trigger
+  workflow_dispatch:
     inputs:
       branch:
         description: 'Branch to build docs from'
@@ -18,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repository
+      # 1. Checkout source
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -28,21 +27,25 @@ jobs:
         with:
           python-version: '3.12'
 
-      # 3. Install dependencies from requirements.txt
-      - name: Install dependencies
+      # 3. Show working directory and files
+      - name: Show current directory
+        run: |
+          pwd
+          ls -la
+
+      # 4. Install dependencies from requirements.txt
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      # 4. Make sure the current directory is in PYTHONPATH (like on your test PCs)
-      - name: Add repo root to PYTHONPATH
-        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
+          python -m pip install -r requirements.txt
 
       # 5. Build documentation
       - name: Build documentation
         run: |
-          chmod +x ./build_doc.sh
-          ./build_doc.sh
+          # Make repo root importable for Sphinx autodoc
+          export PYTHONPATH="${PWD}:${PYTHONPATH}"
+          sphinx-apidoc -o docs/api .
+          sphinx-build -b html docs docs/_build/html
 
       # 6. Upload built HTML as artifact
       - name: Upload documentation artifact
