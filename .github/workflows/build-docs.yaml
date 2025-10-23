@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout source
+      # 1. Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -31,18 +31,25 @@ jobs:
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
+          pip install -r requirements.txt
 
-      # 4. Build documentation
+      # 4. Set PYTHONPATH so NSTAX can be imported
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=${PWD}/..:${PYTHONPATH}" >> $GITHUB_ENV
+
+      # 5. Build documentation
       - name: Build documentation
         run: |
-          # Make repo root importable for Sphinx autodoc
-          ### export PYTHONPATH="${PWD}:${PYTHONPATH}"
-          export PYTHONPATH="${PWD}/..:${PYTHONPATH}"
+          # Clean previous build
+          rm -rf docs/_build docs/api
+
+          # Generate autodoc .rst files
           sphinx-apidoc -o docs/api .
+
+          # Build HTML documentation
           sphinx-build -b html docs docs/_build/html
 
-      # 5. Upload built HTML as artifact
+      # 6. Upload built HTML as artifact
       - name: Upload documentation artifact
         uses: actions/upload-artifact@v4
         with:
