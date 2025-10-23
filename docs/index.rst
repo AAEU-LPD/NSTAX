@@ -28,7 +28,7 @@ Hello World !
    :maxdepth: 2
    :caption: API Reference
 
-   api/NSTA
+   api/NSTAX
 
 .. toctree::
    :maxdepth: 2
