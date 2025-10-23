@@ -44,6 +44,7 @@ jobs:
         run: |
           # Make repo root importable for Sphinx autodoc
           export PYTHONPATH="${PWD}:${PYTHONPATH}"
+          export PYTHONPATH="${PWD}/..:${PYTHONPATH}"
           sphinx-apidoc -o docs/api .
           sphinx-build -b html docs docs/_build/html
 
