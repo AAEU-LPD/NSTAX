@@ -2,7 +2,7 @@ appdirs==1.4.4
 argcomplete==3.1.4
 attrs==23.2.0
 Automat==22.10.0
-Babel==2.10.3
+Babel==2.17.0
 bcrypt==3.2.2
 beautifulsoup4==4.12.3
 blinker==1.7.0
