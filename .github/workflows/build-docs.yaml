@@ -33,11 +33,18 @@ jobs:
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=${PWD}/..:${PYTHONPATH}" >> $GITHUB_ENV
 
-      - name: Build documentation
-        run: ./build_doc.sh
+      - name: Make build script executable and Build documentation
+        run: |
+          chmod +x build_doc.sh
+          ./build_doc.sh
+
+      # - name: Build documentation
+      # run: ./build_doc.sh
 
       - name: Upload documentation artifact
         uses: actions/upload-artifact@v4
         with:
           name: sphinx-html-docs
           path: docs/_build/html
+
+
