@@ -28,23 +28,18 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip3 install -r requirements.txt
 
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=${PWD}/..:${PYTHONPATH}" >> $GITHUB_ENV
 
-      - name: Make build script executable and Build documentation
+      - name: Build documentation
         run: |
           chmod +x build_doc.sh
           ./build_doc.sh
-
-      # - name: Build documentation
-      # run: ./build_doc.sh
 
       - name: Upload documentation artifact
         uses: actions/upload-artifact@v4
         with:
           name: sphinx-html-docs
           path: docs/_build/html
-
-
