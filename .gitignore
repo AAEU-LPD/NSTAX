@@ -1,6 +1,6 @@
 # File Extensions to exclude
 *.pyc
-*.txt
+# *.txt
 # *.bat
 *.zip
 *.html
